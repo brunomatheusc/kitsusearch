@@ -10,15 +10,21 @@ header nav {
 }
 
 header nav h3 {
-    font-size: 32px;
+    font-size: 27px;
     text-transform: uppercase;
     font-weight: bold;
 }
 
+header nav h3::after {
+    display: block;
+    content: '';
+    border-bottom: 3px solid #d42026;
+    width: 54px;
+}
+
 header span {
     margin-left: 10px;
-    font-size: 32px;
+    font-size: 27px;
     font-weight: lighter;
     text-transform: uppercase;
-
 }

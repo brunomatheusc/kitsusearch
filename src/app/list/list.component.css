@@ -1,15 +1,103 @@
-.container {
-    margin-top: 34px;
-}
-
 .container section.search {
     display: flex;
     flex-direction: column;
+    padding: 34px 0;
 }
 
-input {
+.container section.search label {
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.container section.search input {
     border: 1px solid #a5a5a5;
     width: 400px;
     height: 31px;
     border-radius: 4px;
+}
+
+.container .list table {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.container .list table thead tr th {
+    background-color: #d42026;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 300;
+    padding: 10px;
+    text-align: left;
+}
+
+.container .list table thead tr th:first-child {
+    margin-right: 10px;
+}
+
+.img-profile {
+    width: 58px;
+    height: 58px;
+    border-radius: 50%;
+}
+
+.profile {
+    display: flex;
+    align-items: center;
+    padding: 25px;
+}
+
+.profile span,.description span {
+    font-size: 21px;
+    font-weight: 400;
+    color: #4e4e4e;
+}
+
+.description {
+    padding: 25px 0;
+}
+
+.profile span {
+    margin-left: 25px;
+}
+
+.wrapper,.items-wrapper {
+    display: flex;
+}
+
+.items-wrapper {
+    height: 112px;
+    border-bottom: 3px solid #f7d8d9;
+}
+
+.single {    
+    flex: 1;
+    width: 0;
+}
+
+.single:not(:last-child){
+    margin-right: 10px;
+}
+
+.header {
+    border: 1px solid #eee;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    transition: 0.5s;
+}
+
+.header .title {
+    background-color: #d42026;
+    color: #fff;
+    font-size: 16px;    
+    font-weight: 300;
+}
+
+.header li {
+    background-color: #262626;
+    border-bottom: 1px solid #eee;
+    padding: 10px;
+    text-align: left;
+    color: #fff;
 }
