@@ -1,0 +1,15 @@
+.container {
+    margin-top: 34px;
+}
+
+.container section.search {
+    display: flex;
+    flex-direction: column;
+}
+
+input {
+    border: 1px solid #a5a5a5;
+    width: 400px;
+    height: 31px;
+    border-radius: 4px;
+}
