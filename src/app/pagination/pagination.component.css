@@ -45,7 +45,7 @@
     content: '';
     position: absolute;
     /* left: calc(33% - 20px); */
-    left:38vw;
+    left:36%;
     width: 0;
     height: 0;
     border-left: 8px solid transparent;
@@ -58,7 +58,7 @@
     content: '';
     position: absolute;
     /* left: calc(68% - 20px); */
-    left: 60vw;
+    left: 61%;
     width: 0;
     height: 0;
     border-left: 8px solid transparent;

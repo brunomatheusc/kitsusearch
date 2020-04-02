@@ -7,8 +7,9 @@
     box-sizing: border-box;
 }
 
-body {
+html, body {
     font: 14px Roboto, sans-serif !important;
+    height: 100%;
 }
 
 ul {

@@ -57,6 +57,13 @@
     padding: 25px 0;
 }
 
+.description span {
+    /* display: inline-block;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;     */
+}
+
 .profile span {
     margin-left: 25px;
 }
@@ -68,6 +75,11 @@
 .items-wrapper {
     height: 112px;
     border-bottom: 3px solid #f7d8d9;
+}
+
+.items-wrapper:hover {
+    transition: 0.2s;
+    background-color: rgba(212, 32, 38, 0.1);
 }
 
 .single {    

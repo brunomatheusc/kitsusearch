@@ -1,7 +1,9 @@
 <div class="container">
     <section class="search">
-        <label for="" class="color-primary">Nome do Personagem</label>
-        <input type="text" name="" id="">
+        <form>
+            <label for="" class="color-primary">Nome do Personagem</label>
+            <input type="text" [(ngModel)]="search" name="search" (keyup)="handleOnTyping()">
+        </form>
     </section>
 
     <section class="list">
@@ -19,47 +21,17 @@
             </div>
         </div>
 
-        <div class="items-wrapper">
+        <div class="items-wrapper" *ngFor="let character of filteredCharacters">
             <div class="single">
                 <div class="profile">
-                    <img src="/assets/profile-02.jpg" class="img-profile" alt="">
-                    <span>Tony Stark</span>
+                    <img src="{{ character.image }}" class="img-profile" alt="">
+                    <span>{{ character.name }}</span>
                 </div>        
             </div>
                         
             <div class="single">
                 <div class="description">
-                    <span>Um bilionário, gênio, playboy, filantrópo e o Homem de Ferro</span>
-                </div>
-            </div>
-        </div>
-
-        <div class="items-wrapper">
-            <div class="single">
-                <div class="profile">
-                    <img src="/assets/profile-02.jpg" class="img-profile" alt="">
-                    <span>Tony Stark</span>
-                </div>        
-            </div>
-                        
-            <div class="single">
-                <div class="description">
-                    <span>Um bilionário, gênio, playboy, filantrópo e o Homem de Ferro</span>
-                </div>
-            </div>
-        </div>
-
-        <div class="items-wrapper">
-            <div class="single">
-                <div class="profile">
-                    <img src="/assets/profile-02.jpg" class="img-profile" alt="">
-                    <span>Tony Stark</span>
-                </div>        
-            </div>
-                        
-            <div class="single">
-                <div class="description">
-                    <span>Um bilionário, gênio, playboy, filantrópo e o Homem de Ferro</span>
+                    <span>{{ character.description }}</span>
                 </div>
             </div>
         </div>
