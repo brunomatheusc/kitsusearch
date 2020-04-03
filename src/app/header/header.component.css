@@ -1,3 +1,7 @@
+.box {
+    flex: 0 1 auto;
+}
+
 header {
     display: flex;
     justify-content: space-between;

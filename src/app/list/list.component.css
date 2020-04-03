@@ -1,15 +1,19 @@
-.container section.search {
+.container {
+    flex: 1 1 auto;
+}
+
+.container section.search form {
     display: flex;
     flex-direction: column;
     padding: 34px 0;
 }
 
-.container section.search label {
+.container section.search form label {
     font-size: 16px;
     font-weight: 400;
 }
 
-.container section.search input {
+.container section.search form input {
     border: 1px solid #a5a5a5;
     width: 400px;
     height: 31px;

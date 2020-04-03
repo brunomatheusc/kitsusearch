@@ -1,3 +1,7 @@
 .container {
+    display: flex;
+    flex-flow: column;
     padding: 20px 42px;
+    height: 100%;
+    min-height: 100%;
 }

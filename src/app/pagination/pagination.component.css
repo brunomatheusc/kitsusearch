@@ -44,8 +44,7 @@
 .pagination::before {
     content: '';
     position: absolute;
-    /* left: calc(33% - 20px); */
-    left:36%;
+    left: calc(35% - 20px);
     width: 0;
     height: 0;
     border-left: 8px solid transparent;
@@ -57,8 +56,7 @@
 .pagination::after {
     content: '';
     position: absolute;
-    /* left: calc(68% - 20px); */
-    left: 61%;
+    left: calc(66% - 20px);
     width: 0;
     height: 0;
     border-left: 8px solid transparent;

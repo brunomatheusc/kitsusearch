@@ -49,7 +49,7 @@ export class ListComponent implements OnInit {
         });
 
         // Copia os elementos do array original para um array de filtro
-        this.filteredCharacters = this.characters;
+        this.filteredCharacters = this.characters.slice(0, 1);
     }
 
     handleOnTyping() {
@@ -61,7 +61,6 @@ export class ListComponent implements OnInit {
         }
 
         this.filteredCharacters = this.characters.filter(f => {
-            console.log(f.name.toLowerCase().includes(searched));
             return f.name.toLowerCase().includes(searched);
         });
 
