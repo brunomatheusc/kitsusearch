@@ -1,1 +1,21 @@
-<p>detail works!</p>
+<div class="box">
+    <div class="wrapper">
+        <img src="{{ character.image }}" alt="">
+        <span>{{ character.name }}</span>
+    </div>
+
+    <h3>Detalhes</h3>
+
+    <ul>
+        <li>Tipo:<strong>  {{ detail.type }}, Status: {{ detail.attributes.status }}</strong></li>
+        <li>Título:<strong>  {{ detail.attributes.title }}</strong></li>
+        <li>Data de início:<strong> {{ detail.attributes.startDate | date: 'dd/MM/yyyy' }}</strong></li>
+        <li>Data de fim:<strong> {{ detail.attributes.endDate | date: 'dd/MM/yyyy' }}</strong></li>
+        <li>Total de capítulos:<strong>  {{ detail.attributes.chapterCount }}</strong></li>
+        <li>Total de volumes:<strong>  {{ detail.attributes.volumeCount }}</strong></li>
+    </ul>
+
+    <h3>Descrição</h3>
+
+    <p [innerHTML]="character.description"></p>
+</div>

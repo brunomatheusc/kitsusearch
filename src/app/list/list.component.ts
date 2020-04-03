@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AppService } from './../shared/services/app.service';
 import { ApiService } from './../shared/services/api.service';
 import { Character } from './../shared/object/character';
+import { setCharacter } from './../shared/util';
 
 @Component({
   selector: 'app-list',
@@ -31,21 +32,7 @@ export class ListComponent implements OnInit {
 
         // Percorre os resultados para criar o objeto resposta
         this.characters = response.map(r => {
-            // Cria um objeto
-            let character: Character = new Character();
-
-            // Usando a desestruturação para pegar as propriedas
-            const { id, attributes, relationships } = r;    
-            const { name, description, image } = attributes;
-
-            // Seta os dados do objeto
-            character.id = id;
-            character.name = name;
-            character.description = `${description.substring(0, 180)}...`;
-            character.image = image.original;
-            character.media = relationships.mediaCharacters.links.related;
-    
-            return character;
+            let character: Character = setCharacter(r);
         });
 
         // Copia os elementos do array original para um array de filtro

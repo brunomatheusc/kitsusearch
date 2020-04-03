@@ -23,16 +23,20 @@
 
         <div class="items-wrapper" *ngFor="let character of filteredCharacters">
             <div class="single">
-                <div class="profile">
-                    <img src="{{ character.image }}" class="img-profile" alt="">
-                    <span>{{ character.name }}</span>
-                </div>        
+                <a href="#" routerLink="/details/{{ character.id }}">
+                    <div class="profile">
+                        <img src="{{ character.image }}" class="img-profile" alt="">
+                        <span>{{ character.name }}</span>
+                    </div>       
+                </a>
             </div>
-                        
+            
             <div class="single">
-                <div class="description">
-                    <span>{{ character.description }}</span>
-                </div>
+                <a href="#" routerLink="/details">
+                    <div class="description">
+                        <span>{{ character.description }}</span>
+                    </div>
+                </a>
             </div>
         </div>
     </section>

@@ -9,15 +9,22 @@ import { AxiosInstance, AxiosResponse } from 'axios';
 export class AppService {
     constructor(private apiService: ApiService){}
 
-    async getAnimes() {
-        const response = await this.apiService.api.get('/anime');
-
-        return response.data.data;
-    }
-
     async getCharacters() {
         const response = await this.apiService.api.get('/characters');
 
         return response.data.data;
+    }
+    
+    async getCharacterById(characterId: string) {        
+        const response = await this.apiService.api.get(`/characters/${characterId}`);
+    
+        return response.data.data;
+    }
+
+    async getMedias(related: string) {
+        this.apiService.api.defaults.baseURL = related;
+        const response = await this.apiService.api.get('');
+
+        return response.data;
     }
 }
