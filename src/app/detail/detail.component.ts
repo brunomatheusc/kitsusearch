@@ -14,15 +14,17 @@ export class DetailComponent implements OnInit {
     private characterId: string = '';
     public character: Character = new Character();
     public detail: Detail = new Detail('', '', null);
+    public loading: boolean;
 
     constructor(
         private route: ActivatedRoute, 
         private appService: AppService
     ) { }
 
-    ngOnInit() {
+    async ngOnInit() {
         this.characterId = this.route.snapshot.params.id;
-        this.getCharacterInfo();
+        this.loading = true;
+        await this.getCharacterInfo();
     }
 
     async getCharacterInfo() {
@@ -31,21 +33,19 @@ export class DetailComponent implements OnInit {
 
         this.character.description = response.attributes.description;
 
-        const medias = await this.appService.getMedias('https://kitsu.io/api/edge/media-characters/111275/media');
+        const mediaCharacters = (await this.appService.getMedias(response.relationships.mediaCharacters.links.related)).data[0];
+
+        const medias = await this.appService.getMedias(mediaCharacters.relationships.media.links.related);
 
         const { id, type, attributes } = medias.data;
-        const { titles, createdAt, updatedAt, synopsis, startDate, posterImage, endDate, status, chapterCount, volumeCount } = attributes;
-       
+        const { titles, createdAt, updatedAt, synopsis, startDate, posterImage, endDate, status } = attributes;
+
         let attr: Attributes = new Attributes(
             titles.en != null ?  titles.en : titles.en_jp, 
-            synopsis, startDate, endDate, status, posterImage.original,
-            chapterCount, volumeCount, createdAt, updatedAt
+            synopsis, startDate, endDate, status, posterImage.original, createdAt, updatedAt
         );
 
         this.detail = new Detail(id, type, attr);
-
-        console.log(medias.data);
-        console.log(this.detail);
-        console.log(this.character);
+        this.loading = false;
     }
 }

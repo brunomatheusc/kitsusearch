@@ -17,3 +17,11 @@ export function setCharacter(response): Character {
 
     return character;
 }
+
+export function calculateMaxPage(limit: number, total: number): number {
+    if (limit == null || limit <= 0) {
+        return limit;
+    }
+
+    return (total % limit > 0) ? (total / limit) + 1 : (total / limit);
+}

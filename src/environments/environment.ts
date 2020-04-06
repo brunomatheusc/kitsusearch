@@ -4,5 +4,8 @@ export const environment = {
     },
     api: 'https://kitsu.io/api/edge',
     apiURL: 'https://kitsu.io/api/edge',
-    production: false
+    production: false,
+    filter: {
+        limit: 10,
+    }
 };

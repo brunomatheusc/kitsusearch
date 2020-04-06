@@ -40,4 +40,21 @@
             </div>
         </div>
     </section>
+
+    <ul class="pagination">
+        <li>
+            <button class="icon" [ngClass]="{ 'active' : (page == 1) }" (click)="handlePreviousPage()">
+                <fa-icon [icon]="faCaretLeft"></fa-icon>
+            </button>
+        </li>
+        <li 
+            *ngFor="let i of counter(pages)" 
+            [ngClass]="{ 'active' : (i + 1 == page) }"
+            >
+            <button (click)="handlePagination(i)">{{ i + 1 }}</button>
+        </li>
+        <li>...</li>
+        <li><button class="icon" [ngClass]="{ 'active' : (page == filter.maxPage) }" (click)="handleNextPage()"><fa-icon [icon]="faCaretRight"></fa-icon></button></li>
+        <!-- <li><button>{{ filter.maxPage }}</button></li> -->
+    </ul>    
 </div>

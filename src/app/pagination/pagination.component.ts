@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { Filter } from './../shared/object/filter';
 
 @Component({
   selector: 'app-pagination',
@@ -6,8 +7,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./pagination.component.css']
 })
 
+
 export class PaginationComponent implements OnInit {
+    @Input() public filter: Filter;
+
     constructor() { }
 
-    ngOnInit() {}
+    ngOnInit() {
+    }
 }

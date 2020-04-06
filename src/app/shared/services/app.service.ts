@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { ApiService } from './api.service';
-import { AxiosInstance, AxiosResponse } from 'axios';
 
 @Injectable({
     providedIn: 'root'
@@ -9,10 +8,8 @@ import { AxiosInstance, AxiosResponse } from 'axios';
 export class AppService {
     constructor(private apiService: ApiService){}
 
-    async getCharacters() {
-        const response = await this.apiService.api.get('/characters');
-
-        return response.data.data;
+    async getCharacters(page: number, limit: number) {
+        return (await this.apiService.api.get(`characters?page[limit]=${limit}&page[offset]=${(page - 1) * 10}`)).data;
     }
     
     async getCharacterById(characterId: string) {        

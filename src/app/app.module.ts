@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 import { ROUTES } from './app.routes';
 
@@ -14,6 +15,7 @@ import { PaginationComponent } from './pagination/pagination.component';
 
 import { SharedModule } from './shared/shared.module';
 import { HomeComponent } from './home/home.component';
+import { LoaderComponent } from './loader/loader.component';
 
 @NgModule({
     declarations: [
@@ -22,7 +24,8 @@ import { HomeComponent } from './home/home.component';
         ListComponent,
         DetailComponent,
         PaginationComponent,
-        HomeComponent
+        HomeComponent,
+        LoaderComponent
     ],
     imports: [
         BrowserModule,
@@ -30,7 +33,8 @@ import { HomeComponent } from './home/home.component';
         HttpClientModule,
         FormsModule,
         ReactiveFormsModule,
-        RouterModule.forRoot(ROUTES)
+        RouterModule.forRoot(ROUTES),
+        FontAwesomeModule
     ],
     providers: [],
     bootstrap: [AppComponent]

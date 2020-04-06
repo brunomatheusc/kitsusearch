@@ -14,8 +14,6 @@ export class Attributes {
         public endDate: Date,
         public status: string,
         public image: string,
-        public chapterCount: number,
-        public volumeCount: number,
         public cratedAt: Date,
         public updatedAt: Date,
     ) {}

@@ -49,7 +49,7 @@ h3 {
     flex-direction: column;
     flex: 1;
     line-height: 30px;
-    padding: 34px 0;
+    padding-top: 34px;
 }
 
 .box ul li {

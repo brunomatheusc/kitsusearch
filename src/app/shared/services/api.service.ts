@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import axios, { AxiosInstance } from 'axios';
+import { environment } from './../../../environments/environment';
 
 @Injectable({
     providedIn: 'root'
@@ -10,7 +11,7 @@ export class ApiService {
 
     constructor() {        
         this.api = axios.create({
-            baseURL: 'https://kitsu.io/api/edge',
+            baseURL: environment.apiURL,
         });
     }
 }

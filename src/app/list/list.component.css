@@ -114,3 +114,44 @@
 a {
     text-decoration: none;
 }
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0;    
+}
+
+.pagination li button {
+    display: flex;
+    width: 32px;
+    height: 32px;
+    background-color: #fff;
+    color: #d42026;
+    text-align: center;
+    border: 1px solid #d42026;
+    border-radius: 50%;
+    align-items: center;
+    justify-content: center;
+    font-size: 21px;
+    font-weight: 400;
+}
+
+.pagination li.active button {
+    background-color: #d42026;
+    color: #fff;
+    border: 1px solid #fff;
+    font-weight: 300;
+}
+
+.pagination li + li,.pagination li:first-child {
+    margin-right: 20px;
+} 
+
+.pagination li button.icon {
+    border: none;
+}
+        
+.pagination li button.icon.active {
+    opacity: 0.5;
+}
