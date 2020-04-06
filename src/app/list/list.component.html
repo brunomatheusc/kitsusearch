@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container-list">
     <section class="search">
         <form>
             <label for="" class="color-primary">Nome do Personagem</label>
@@ -14,7 +14,7 @@
                 </ul>
             </div>
     
-            <div class="single">
+            <div class="single hidden-sm">
                 <ul class="header">
                     <li class="title">Descrição</li>
                 </ul>
@@ -31,7 +31,7 @@
                 </a>
             </div>
             
-            <div class="single">
+            <div class="single hidden-sm">
                 <a href="#" routerLink="/details">
                     <div class="description">
                         <span>{{ character.description }}</span>
@@ -55,6 +55,5 @@
         </li>
         <li>...</li>
         <li><button class="icon" [ngClass]="{ 'active' : (page == filter.maxPage) }" (click)="handleNextPage()"><fa-icon [icon]="faCaretRight"></fa-icon></button></li>
-        <!-- <li><button>{{ filter.maxPage }}</button></li> -->
     </ul>    
 </div>

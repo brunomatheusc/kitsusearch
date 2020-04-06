@@ -13,15 +13,16 @@ import { environment } from './../../environments/environment';
   styleUrls: ['./list.component.css']
 })
 export class ListComponent implements OnInit {
-    faCaretLeft = faCaretLeft;
-    faCaretRight = faCaretRight;
+    public faCaretLeft = faCaretLeft;
+    public faCaretRight = faCaretRight;
     public characters: Character[] = [];
     public filteredCharacters: Character[] = [];
     public search: string;
     public loading: boolean;
     public filter: Filter;
     public page: number = 1;
-    public pages = 5;
+    public pages: number = 5;
+    public listItems: number;
     
     constructor(
         public appService: AppService, 
@@ -31,6 +32,8 @@ export class ListComponent implements OnInit {
     async ngOnInit() {
         this.search = '';
         this.loading = true;
+        this.listItems = (window.innerWidth < 540) ? 3 : 5;
+        this.pages = this.listItems;
         await this.getCharacters();
     }
     
@@ -78,8 +81,8 @@ export class ListComponent implements OnInit {
     setPages(page: number) {
         this.getCharacters();
 
-        if (page + 5 < this.filter.maxPage){
-            this.pages = page + 5;
+        if (page + this.listItems < this.filter.maxPage){
+            this.pages = page + this.listItems;
         }
     }
 
@@ -109,7 +112,7 @@ export class ListComponent implements OnInit {
     counter(start: number) {
         let res = [];
 
-        for (let i = start - 5; i < start; i++) {
+        for (let i = start - this.listItems; i < start; i++) {
             res.push(i);
         }
 

@@ -1,32 +1,32 @@
-.container {
+.container-list {
     flex: 1 1 auto;
 }
 
-.container section.search form {
+.container-list section.search form {
     display: flex;
     flex-direction: column;
     padding: 34px 0;
 }
 
-.container section.search form label {
+.container-list section.search form label {
     font-size: 16px;
     font-weight: 400;
 }
 
-.container section.search form input {
+.container-list section.search form input {
     border: 1px solid #a5a5a5;
     width: 400px;
     height: 31px;
     border-radius: 4px;
 }
 
-.container .list table {
+.container-list .list table {
     display: flex;
     flex-direction: column;
     flex: 1;
 }
 
-.container .list table thead tr th {
+.container-list .list table thead tr th {
     background-color: #d42026;
     color: #fff;
     font-size: 16px;
@@ -35,7 +35,7 @@
     text-align: left;
 }
 
-.container .list table thead tr th:first-child {
+.container-list .list table thead tr th:first-child {
     margin-right: 10px;
 }
 

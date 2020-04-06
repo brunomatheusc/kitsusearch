@@ -23,3 +23,47 @@ button {
 .color-primary {
     color: #d42026;    
 }
+
+@media (max-width: 540px) {
+    .hidden-sm {
+        display: none;
+    }
+
+    .container {
+        padding: 12px 0 !important;
+    }
+
+    .container section.search form {
+        padding: 12px 0 !important;
+    }
+
+    .box {
+        padding: 0 42px;
+    }
+
+    .box header nav h3 a {
+        font-size: 16px !important;
+        font-weight: 400 !important;
+    }
+    
+    header span {
+        font-size: 16px !important;
+        font-weight: 300 !important;
+    }
+
+    section.search {
+        padding: 0 42px;
+    }
+
+    .container-list section.search form input {
+        width: 76vw !important;
+    }
+
+    .wrapper .single {
+        margin-right: 0 !important;
+    }
+
+    .profile {
+        padding: 18px!important;
+    }
+}
